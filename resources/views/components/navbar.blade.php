@@ -1,6 +1,5 @@
-<!-- resources/views/components/navbar.blade.php -->
 <nav class="bg-white relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
         <div class="flex justify-between h-16">
             <!-- Logo -->
             <div class="flex items-center">
@@ -14,7 +13,7 @@
                             fill="#2D68F6" />
                     </svg>
                 </div>
-                <a href="" class="text-2xl font-bold text-blue-600">Toest</a>
+                <a href="" class="hidden md:block text-2xl font-bold text-blue-600">Toest</a>
             </div>
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center justify-center flex-1">
@@ -40,7 +39,7 @@
             <!-- Mobile menu button -->
             <div class="flex items-center md:hidden">
                 <button id="mobile-menu-button" type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-blue-600 hover:text-blue-700 focus:outline-none"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!-- Hamburger icon -->
@@ -61,7 +60,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div id="mobile-menu" class="hidden md:hidden">
+    <div id="mobile-menu" class="hidden md:hidden transform transition-all duration-300 ease-in-out -translate-y-full">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href=""
                 class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
@@ -73,9 +72,9 @@
         <div class="pt-4 pb-3 border-t border-gray-200">
             <div class="items-center justify-center space-x-4 px-4">
                 <a href=""
-                    class="mb-2 text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white block w-full text-center px-4 py-2 rounded-md text-sm font-medium">Login</a>
+                    class="mb-2 text-blue-600 border border-white hover:bg-blue-600 hover:text-white block w-full text-center px-4 py-2 rounded-md text-sm font-medium">Login</a>
                 <a href=""
-                    class="bg-blue-600 text-white hover:bg-blue-700 block w-full text-center px-4 py-2 rounded-md text-sm font-medium">Sign
+                    class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-700 hover:text-white block w-full text-center px-4 py-2 rounded-md text-sm font-medium">Sign
                     Up</a>
             </div>
         </div>
@@ -91,8 +90,42 @@
 
         mobileMenuButton.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('translate-y-0');
+            mobileMenu.classList.toggle('-translate-y-full');
             hamburgerIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
         });
     });
 </script>
+
+<style>
+    .mobile-menu-open {
+        background-color: #2D68F6;
+        /* Warna biru */
+    }
+
+    .mobile-menu-open a {
+        color: white;
+        /* Warna teks putih */
+    }
+
+    .mobile-menu-open .bg-white {
+        background-color: white !important;
+        /* Pastikan background tombol tetap putih */
+        color: #2D68F6 !important;
+        /* Pastikan teks tombol tetap biru */
+    }
+
+    /* Efek Slide Down */
+    #mobile-menu {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #mobile-menu.-translate-y-full {
+        transform: translateY(-100%);
+    }
+
+    #mobile-menu.translate-y-0 {
+        transform: translateY(0);
+    }
+</style>
