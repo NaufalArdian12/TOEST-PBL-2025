@@ -10,7 +10,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 bg-white py-6 md:px-16">
         <div class="container mx-auto">
-            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
                 {{-- Left side content --}}
                 <div class="w-full lg:w-1/2 flex flex-col justify-center items-start gap-6">
                     <h1 class="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[120%] capitalize">
@@ -23,7 +23,7 @@
                         expand their employment opportunities.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                    <div class="flex flex-col-reverse sm:flex-row gap-2 w-full sm:w-auto">
                         <a href=""
                             class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-center">
                             Have Certificate?
@@ -37,7 +37,7 @@
                 </div>
 
                 {{-- Right side image --}}
-                <div class="hidden lg:block lg:w-1/2">
+                <div class="lg:block lg:w-1/2">
                     <img src="{{ asset('images/auditorium-seats.png') }}" alt="Blue auditorium seats"
                         class="rounded-lg w-full h-auto object-cover shadow-lg" loading="lazy">
                 </div>
